@@ -393,7 +393,3 @@ combos:
   k: '>'
 - p: [0, 12]
   k: Gui+ L
-- p: [24, 36]
-  k: '&msc SCRL_LEFT'
-- p: [25, 37]
-  k: '&msc SCRL_RIGHT'

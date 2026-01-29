@@ -165,8 +165,7 @@
         less { bindings = <&kp LESS_THAN>; key-positions = <39 40>; };
         greater { bindings = <&kp GREATER_THAN>; key-positions = <43 44>; };
         logoff { bindings = <&kp LG(L)>; key-positions = <0 12>; };
-        Scroll_L { bindings = <&msc SCRL_LEFT>; key-positions = <24 36>; };
-        Scroll_R { bindings = <&msc SCRL_RIGHT>; key-positions = <25 37>; };
+
     };
 
     macros { };
