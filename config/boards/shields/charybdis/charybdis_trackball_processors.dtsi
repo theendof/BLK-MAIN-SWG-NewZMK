@@ -19,8 +19,13 @@
     }; \
     \
     scroll { \
-        layers = <NUM_AND_FUN>; \
+        layers = <QWERTY>; \
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 40>, <&zip_xy_to_scroll_mapper>; \
+    }; \
+    \
+    scroll_slow { \
+        layers = <NUM_AND_FUN>; \
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 120>, <&zip_xy_to_scroll_mapper>; \
     }; \
     \
     move { \
