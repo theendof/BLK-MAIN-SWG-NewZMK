@@ -20,12 +20,12 @@
 #define CHARYBDIS_TRACKBALL_PROCESSORS \
     snipe { \
         layers = <SNIPE>; \
-        input-processors = <&zip_xy_scaler 1 6; \
+        input-processors = <&zip_xy_scaler 1 3>; \
     }; \
     \
     move { \
         layers = <AUTO_MOUSE>; \
-        input-processors = <&zip_xy_scaler 1 2>; \
+        input-processors = <&zip_xy_scaler 1 1>; \
     }; \
     \
     scroll_slow { \
@@ -35,5 +35,5 @@
     \
     scroll { \
         layers = <QWERTY>; \
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 80>, <&zip_xy_to_scroll_mapper>; \
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 40>, <&zip_xy_to_scroll_mapper>; \
     };
