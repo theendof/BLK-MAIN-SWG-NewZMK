@@ -5,6 +5,7 @@
  * Trackball input processor configurations for Charybdis keyboard
  * Defines scroll, snipe, and move modes with layer bindings
  * Dual scroll modes: fast on QWERTY, slow on NUM_AND_FUN
+ * SEPARATE VERTICAL/HORIZONTAL SCROLL SPEED (horizontal 4x slower)
  * 
  * IMPORTANT: Order matters! More specific layer bindings should come first
  * to prevent fallback to wrong modes.
@@ -12,7 +13,30 @@
 
 #include "charybdis_layers.h"
 #include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
+
+/ {
+  input_processors {
+    // Custom scaler for VERTICAL scroll (Y-axis, wheel)
+    zip_wheel_scaler: zip_wheel_scaler {
+      compatible = "zmk,input-processor-scaler";
+      #input-processor-cells = <2>;
+      type = <INPUT_EV_REL>;
+      codes = <INPUT_REL_WHEEL>;
+      track-remainders;
+    };
+
+    // Custom scaler for HORIZONTAL scroll (X-axis, hwheel)
+    zip_hwheel_scaler: zip_hwheel_scaler {
+      compatible = "zmk,input-processor-scaler";
+      #input-processor-cells = <2>;
+      type = <INPUT_EV_REL>;
+      codes = <INPUT_REL_HWHEEL>;
+      track-remainders;
+    };
+  };
+};
 
 // Standard trackball processing configuration
 // Configures different trackball behaviors for different layers
@@ -30,10 +54,18 @@
     \
     scroll_slow { \
         layers = <NUM_AND_FUN>; \
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 240>, <&zip_xy_to_scroll_mapper>; \
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, \
+                           <&zip_xy_scaler 1 240>, \
+                           <&zip_xy_to_scroll_mapper>, \
+                           <&zip_wheel_scaler 1 1>, \
+                           <&zip_hwheel_scaler 1 4>; \
     }; \
     \
     scroll { \
         layers = <QWERTY>; \
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 60>, <&zip_xy_to_scroll_mapper>; \
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, \
+                           <&zip_xy_scaler 1 60>, \
+                           <&zip_xy_to_scroll_mapper>, \
+                           <&zip_wheel_scaler 1 1>, \
+                           <&zip_hwheel_scaler 1 4>; \
     };
