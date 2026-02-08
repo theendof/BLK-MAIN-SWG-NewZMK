@@ -14,7 +14,7 @@ jobs:
     needs: keymap_images
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      archive_name: firmware_WHT
+      archive_name: firmware_BLK
       
   package_with_keymap:
     needs: [build, keymap_images]
@@ -33,23 +33,23 @@ jobs:
           
       - name: Prepare package folder
         run: |
-          mkdir -p firmware_WHT_SVG
+          mkdir -p firmware_BLK_SVG
           
           # Copy UF2 files
-          if [ -d "artifacts/firmware_WHT" ]; then
-            find artifacts/firmware_WHT -name "*.uf2" -exec cp {} firmware_WHT_SVG/ \;
+          if [ -d "artifacts/firmware_BLK" ]; then
+            find artifacts/firmware_BLK -name "*.uf2" -exec cp {} firmware_BLK_SVG/ \;
           fi
           
           # Copy SVG file
           if [ -d "artifacts/keymap_raw_files" ]; then
-            find artifacts/keymap_raw_files -name "*.svg" -exec cp {} firmware_WHT_SVG/ \;
+            find artifacts/keymap_raw_files -name "*.svg" -exec cp {} firmware_BLK_SVG/ \;
           fi
           
           echo "=== Package contents ==="
-          ls -lah firmware_WHT_SVG/
+          ls -lah firmware_BLK_SVG/
           
       - name: Upload final package
         uses: actions/upload-artifact@v4
         with:
-          name: firmware_WHT_SVG
-          path: firmware_WHT_SVG/
+          name: firmware_BLK_SVG
+          path: firmware_BLK_SVG/
