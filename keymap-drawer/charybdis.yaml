@@ -12,7 +12,7 @@ layers:
   - '8'
   - '9'
   - '0'
-  - '-'
+  - BACK SPACE
   - TAB
   - Q
   - W
@@ -24,7 +24,7 @@ layers:
   - I
   - O
   - P
-  - '['
+  - \\
   - LSHFT
   - A
   - S
@@ -48,15 +48,15 @@ layers:
   - ','
   - DOT
   - FSLH
-  - auto_mouse
+  - '-'
   - LGUI
-  - {t: AL CALCULATOR, h: num_and_fun}
-  - {t: ENTER, h: corrections}
-  - SPACE
-  - LEFT ALT
-  - BACK SPACE
-  - RSHIFT
-  - ENTER
+  - {t: CAPSLOCK, h: num_and_fun}
+  - {t: SPACE, h: auto_mouse}
+  - '&mkp MB1'
+  - '&mkp MB2'
+  - {t: ENTER, h: snipe}
+  - {t: '=', h: set_bt}
+  - DELETE
   num_and_fun:
   - {t: ▽, type: trans}
   - F1
@@ -112,7 +112,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '0'
   - {t: ▽, type: trans}
   auto_mouse:
   - {t: ▽, type: trans}
@@ -135,6 +135,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - UP ARROW
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -145,10 +146,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - LEFT
+  - DOWN ARROW
+  - RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -162,10 +162,10 @@ layers:
   - L CLK
   - R CLK
   - {t: SCROLLLOCK, h: snipe}
-  - {type: held}
+  - {t: ▽, type: trans}
   - L CLK
   - R CLK
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - M CLK
   - {t: ▽, type: trans}
@@ -218,14 +218,14 @@ layers:
   - {t: ▽, type: trans}
   - L CLK
   - R CLK
-  - {t: SCROLLLOCK, h: snipe, type: held}
-  - {type: held}
+  - {t: SCROLLLOCK, h: snipe}
+  - {t: ▽, type: trans}
   - L CLK
   - R CLK
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - M CLK
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   corrections:
@@ -279,7 +279,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -322,25 +322,25 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:
 - p: [31, 30]
